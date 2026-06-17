@@ -7,7 +7,7 @@
       "version": "3.10"
     }
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y monetdb5-sql monetdb-client && pip install --upgrade pip && pip install -r requirements.txt || true",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y monetdb5-sql monetdb-client && pip install pymonetdb==1.9.0",
   "customizations": {
     "vscode": {
       "extensions": [
