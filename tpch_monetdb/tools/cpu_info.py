@@ -9,6 +9,8 @@ class CpuInfoTool:
         self.workspace_root = workspace_root
         self.cache_dir = cache_dir
         self.max_output_tokens = max_output_tokens
+        self.description = "Get CPU information including ISA flags, cache, and NUMA topology."
+        self.params_json_schema = {"type": "object", "properties": {}}
 
     def _truncate(self, text: str, max_len: Optional[int] = None) -> str:
         """截断过长的文本，保留 head/tail 并添加截断标记。"""
@@ -161,5 +163,6 @@ class CpuInfoTool:
             return f"Error: {exc}"
 
 
-def make_cpu_info_tool(workspace_root: str, cache_dir: Optional[Path] = None) -> CpuInfoTool:
-    return CpuInfoTool(workspace_root, cache_dir)
+def make_cpu_info_tool(cwd: str, cache_dir: Optional[Path] = None, **kwargs) -> CpuInfoTool:
+    """创建 CpuInfoTool 实例，忽略额外参数（如 git_snapshotter, wandb_metrics_hook）。"""
+    return CpuInfoTool(cwd, cache_dir)

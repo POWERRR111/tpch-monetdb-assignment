@@ -46,3 +46,13 @@ def register_tpch_monetdb_litellm_model_costs() -> None:
         except ImportError:
             pass
     logging.info(f"Registered {len(overrides)} model cost overrides")
+
+def force_litellm_local_model_cost_map():
+    """Force local model cost map (placeholder)."""
+    # 这个函数用于确保 Litellm 使用本地成本映射，但我们暂时不实现具体逻辑
+    pass
+
+def validate_gpt55_xhigh_model_cost():
+    """Validate GPT-5.5 xhigh model cost (placeholder)."""
+    # 这个函数用于验证 GPT-5.5 的 xhigh 成本，暂时不实现
+    pass

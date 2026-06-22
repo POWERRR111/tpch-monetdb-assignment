@@ -1,6 +1,6 @@
 import os
 import logging
-from typing import Optional
+from typing import Optional,Any
 from dataclasses import dataclass
 
 @dataclass
@@ -11,6 +11,7 @@ class ModelConfig:
     base_url: Optional[str] = None
     api_key: Optional[str] = None
     use_litellm: bool = True
+    openai_client: Optional[Any] = None
 
 def setup_model_config(model_identifier: str) -> ModelConfig:
     from .model_aliases import normalize_accounting_model_name, get_model_provider
